@@ -1,15 +1,15 @@
 # TextMind AI
 
-An AI-powered text summarization platform built using FastAPI and Hugging Face Transformers.
+An AI-powered text summarization platform built using FastAPI and Hugging Face Transformers. The application leverages the T5 Transformer architecture to generate concise and meaningful summaries from long-form text.
 
 ## Features
 
 * Abstractive Text Summarization
-* T5 Transformer Model
 * FastAPI Backend
 * Interactive Web Interface
-* CPU / CUDA / Apple Silicon Support
-* Real-Time Summary Generation
+* Hugging Face Transformers Integration
+* T5 Transformer Architecture
+* Cross-Platform Support (CPU, CUDA, Apple Silicon)
 
 ## Tech Stack
 
@@ -21,60 +21,98 @@ An AI-powered text summarization platform built using FastAPI and Hugging Face T
 * CSS
 * JavaScript
 
-## Project Architecture
+## Project Structure
 
-User Input
-↓
-FastAPI Backend
-↓
-T5 Transformer Model
-↓
-Generated Summary
+```text
+TextMind-AI/
+│
+├── app.py
+├── index.html
+├── requirements.txt
+├── README.md
+├── Text_Summarizer.ipynb
+└── screenshots/
+```
 
-## Screenshots
+## How It Works
 
-### Home Page
-
-![Home](screenshots/home.png)
-
-### Generated Summary
-
-![Summary](screenshots/summary.png)
+1. User enters text in the web interface.
+2. FastAPI receives the request.
+3. Text is preprocessed and tokenized.
+4. T5 Transformer generates a summary.
+5. Summary is returned and displayed on the frontend.
 
 ## Installation
 
-Clone the repository
+Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/TextMind-AI.git
+git clone https://github.com/YOUR_USERNAME/TextMind-AI.git
 cd TextMind-AI
 ```
 
-Install dependencies
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run application
+## Model Setup
+
+The trained model files are not included in this repository due to GitHub file size limitations.
+
+You can download a T5 model directly from Hugging Face:
+
+```python
+from transformers import T5ForConditionalGeneration, T5Tokenizer
+
+model = T5ForConditionalGeneration.from_pretrained("t5-small")
+tokenizer = T5Tokenizer.from_pretrained("t5-small")
+```
+
+Or place your trained model files inside:
+
+```text
+saved_summary_model/
+```
+
+## Running the Application
+
+Start the FastAPI server:
 
 ```bash
 uvicorn app:app --reload
 ```
 
-Open browser
+Open your browser:
 
 ```text
 http://127.0.0.1:8000
 ```
 
+## Dataset
+
+This project was developed using the SAMSum Dataset, a dialogue summarization dataset designed for conversational text summarization tasks.
+
 ## Future Improvements
 
 * PDF Summarization
+* Document Upload Support
 * Multiple Transformer Models
-* Hugging Face Deployment
-* ROUGE Evaluation Metrics
+* ROUGE Score Evaluation
+* Model Deployment on Hugging Face Spaces
+
+## Screenshots
+
+Add screenshots of:
+
+* Home Page
+* Generated Summary Page
 
 ## Author
 
-Siddhanth Singh
+**Siddhanth Singh**
+
+B.Tech Computer Science & Engineering
+
+Interested in AI/ML, NLP, Competitive Programming, and Backend Development.
