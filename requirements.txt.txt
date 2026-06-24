@@ -1,8 +1,0 @@
-fastapi
-uvicorn
-transformers
-torch
-sentencepiece
-protobuf
-jinja2
-pydantic
